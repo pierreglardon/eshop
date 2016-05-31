@@ -11,7 +11,17 @@
 ?>
 
 		</section>
-		<div id="footer-container">
+		<footer id="footer">
+			<div class="row">
+				<div class="columns small-12">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img src="<?php bloginfo('template_directory') ?>/assets/images/focus.svg" alt="<?php bloginfo( 'name' ); ?>"/>
+					</a>
+				</div>
+			</div>
+		</footer>
+
+		<div id="footer-container" style="display:none;">
 			<footer id="footer">
 				<?php do_action( 'foundationpress_before_footer' ); ?>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
@@ -27,7 +37,7 @@
 </div><!-- Close off-canvas content wrapper -->
 <?php endif; ?>
 
-<div class='blackbg toggleMenu'></div>
+<div class='blackbg'></div>
 
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
