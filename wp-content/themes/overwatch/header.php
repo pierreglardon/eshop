@@ -43,13 +43,19 @@
 				</a>
 			</div>
 		<div class="columns smartMenu header-align">
-			<a href="#!" class="showSearch"><i class="fa fa-search" aria-hidden="true"></i></a>
-			<?php if(is_user_logged_in()): ?>
-				<a href="<?= get_permalink(_PAGE_COMPTE); ?>"><i class="fa fa-user" aria-hidden="true"></i></a>
-			<?php else: ?>
-				<a href="<?= wp_registration_url(); ?>"><i class="fa fa-user" aria-hidden="true"></i></a>
-			<?php endif; ?>
-			<a href="<?= get_permalink(_PAGE_CART); ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+			<div class="showSmartMenu show-for-small-only">
+				<div></div>
+			</div>
+			<aside>
+				<a href="#!" class="showSearch"><i class="fa fa-search" aria-hidden="true"></i></a>
+				<?php if(is_user_logged_in()): ?>
+					<a href="<?= get_permalink(_PAGE_COMPTE); ?>"><i class="fa fa-user" aria-hidden="true"></i></a>
+				<?php else: ?>
+					<a href="<?= wp_registration_url(); ?>"><i class="fa fa-user" aria-hidden="true"></i></a>
+				<?php endif; ?>
+				<a href="<?= get_permalink(_PAGE_CART); ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+			</aside>
+
 		</div>
 		</section>
 		<nav id="navigation">

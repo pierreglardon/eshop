@@ -2,7 +2,8 @@
 
 var toggleMenu = $('.toggleMenu'),
     showSearch = $('.showSearch'),
-    blackbg = $('.blackbg');
+    blackbg = $('.blackbg'),
+    showSmartMenu = $('.showSmartMenu');
 
 toggleMenu.click(function() {
     $('#navigation').toggleClass('active');

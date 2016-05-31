@@ -91,18 +91,28 @@ body.admin-bar {
         top:0;
         bottom:0;
         margin:auto;
+        @include breakpoint(small down) {
+            max-width:120px;
+            right:50px;
+            height:25px;
+        }
     }
     .smartMenu {
         float:right;
         width:auto;
-        a {
-            opacity:0.4;
-            margin-left:16px;
-            font-size:18px;
-            color:$grey;
-            transition:opacity .4s ease;
-            &:hover {
-                opacity:0.8;
+        aside {
+            a {
+                opacity:0.4;
+                margin-left:16px;
+                font-size:18px;
+                color:$grey;
+                transition:opacity .4s ease;
+                &:hover {
+                    opacity:0.8;
+                }
+                &:first-of-type {
+                    margin-left:0;
+                }
             }
         }
     }
@@ -175,24 +185,30 @@ body.admin-bar {
         background:#fff;
         .row {
             margin:auto;
+            @include grid-column(12);
             .input-group {
                 padding:10px 0 20px;
                 margin:0;
                 display:block;
                 text-align: center;
                 font-size:0;
-                > * {
+                .input-group-field {
                     display:inline-block;
+                    width:60%;
                     max-width:300px;
-                }
-                input.input-group-field {
                     border:1px solid $gold;
                     border-right:0;
                     background:#fff;
                     font-size:14px;
                 }
-                .button {
-                    background:$gold;
+                .input-group-button {
+                    display:inline-block;
+                    width:40%;
+                    max-width:150px;
+                    .button {
+                        background:$gold;
+                        width:100%;
+                    }
                 }
             }
         }
