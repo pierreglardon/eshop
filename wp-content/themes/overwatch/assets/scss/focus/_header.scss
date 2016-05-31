@@ -1,21 +1,17 @@
 body {
     .blackbg {
-        background:rgba(0,0,0,0);
-        transition:background ease 0.4s;
+        position:absolute;
+        height:100vh;
+        width:100vw;
+        display:none;
+        background:rgba(0,0,0,0.8);
+        z-index:970;
+        top:0;
+        left:0;
     }
     &.openMenu {
         position:relative;
         overflow-x:hidden;
-        .blackbg {
-            position:absolute;
-            height:100vh;
-            width:100vw;
-            display:none;
-            background:rgba(0,0,0,0.8);
-            z-index:970;
-            top:0;
-            left:0;
-        }
         #header {
             .menuTop {
                 .toggleMenu {

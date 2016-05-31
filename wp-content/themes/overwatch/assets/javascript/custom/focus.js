@@ -1,17 +1,18 @@
 // menu
 
 var toggleMenu = $('.toggleMenu'),
+    blackBG = $('.blackBG'),
     showSearch = $('.showSearch');
 
 toggleMenu.click(function() {
-  $('#navigation').toggleClass('active');
-  $('body').toggleClass('openMenu');
-  if ($('.blackbg').length){
-        $('.blackbg').remove();
-    }
-  $("body").append("<div class='blackbg'></div>");
-  $('.blackbg').fadeToggle();
-
+    $('#navigation').toggleClass('active');
+    $('body').toggleClass('openMenu');
+    $('.blackbg').fadeToggle();
+});
+blackBG.click(function() {
+    $('#navigation').toggleClass('active');
+    $('body').toggleClass('openMenu');
+    $('.blackbg').fadeToggle();
 });
 showSearch.click(function() {
     event.preventDefault();
