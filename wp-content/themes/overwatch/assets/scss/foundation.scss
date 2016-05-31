@@ -74,6 +74,9 @@
   My custom styles:
   Add your scss files below to structure your project styles
 */
+@import "focus/header";
+@import "focus/footer";
+@import "focus/global"; 
 
 // Modules
 @import "modules/navigation";
