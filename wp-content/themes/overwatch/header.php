@@ -66,13 +66,27 @@
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('template_directory') ?>/assets/images/focus.svg" alt="<?php bloginfo( 'name' ); ?>"/></a>
 			</div>
 		<div class="columns smartMenu header-align">
-			test
+			<a href="#!" class="showSearch"><i class="fa fa-search" aria-hidden="true"></i></a>
+			<?php if(is_user_logged_in()): ?>
+				<a href="<?= get_permalink(_PAGE_COMPTE); ?>"><i class="fa fa-user" aria-hidden="true"></i></a>
+			<?php else: ?>
+				<a href="<?= wp_registration_url(); ?>"><i class="fa fa-user" aria-hidden="true"></i></a>
+			<?php endif; ?>
+			<a href="<?= get_permalink(_PAGE_CART); ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 		</div>
 		</section>
-		<nav>
+		<nav id="navigation">
+			<div class="toggleMenu hide">
+				<div></div>
+				<div></div>
+			</div>
 			<?= wp_nav_menu("topbar"); ?>
 		</nav>
+		<section class="search">
+			<div class="row">
+				<?= get_search_form ( $echo = true ) ?>
+			</div>
+		</section>
 	</header>
-
 	<section class="container">
 		<?php do_action( 'foundationpress_after_header' );

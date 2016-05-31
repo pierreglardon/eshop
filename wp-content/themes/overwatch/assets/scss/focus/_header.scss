@@ -1,6 +1,63 @@
+body {
+    .blackbg {
+        background:rgba(0,0,0,0);
+        transition:background ease 0.4s;
+    }
+    &.openMenu {
+        position:relative;
+        overflow-x:hidden;
+        .blackbg {
+            position:absolute;
+            height:100vh;
+            width:100vw;
+            display:none;
+            background:rgba(0,0,0,0.8);
+            z-index:970;
+            top:0;
+            left:0;
+        }
+        #header {
+            .menuTop {
+                .toggleMenu {
+                    position:relative;
+                    height:20px;
+                    div {
+                        position:relative;
+                        &:nth-of-type(1) {
+                            transform:rotateZ(45deg) translateY(5px) translateX(5px);
+                        }
+                        &:nth-of-type(2) {
+                            opacity:0;
+                        }
+                        &:nth-of-type(3) {
+                            transform:rotateZ(-45deg) translateY(-4px) translateX(3px);
+                        }
+                        &:nth-of-type(4) {
+                            opacity:0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+body.admin-bar {
+    #header {
+        top:32px !important;
+    }
+    nav#navigation {
+        top:132px !important;
+    }
+}
 #header {
     background:#fff;
-    position:relative;
+    position:fixed;
+    width:100%;
+    height:100px;
+    z-index: 980;
+    top:0;
+    right:0;
+    left:0;
     .header-align {
         height:100px;
         box-sizing: border-box;
@@ -14,6 +71,8 @@
             cursor: pointer;
             display:inline-block;
             div {
+                transition: ease 0.3s;
+                top:0;
                 height:2px;
                 margin-bottom:4px;
                 background:$grey;
@@ -38,5 +97,98 @@
     .smartMenu {
         float:right;
         width:auto;
+        a {
+            opacity:0.4;
+            margin-left:16px;
+            font-size:18px;
+            color:$grey;
+            transition:opacity .4s ease;
+            &:hover {
+                opacity:0.8;
+            }
+        }
+    }
+    nav#navigation {
+        position:fixed;
+        width:300px;
+        left:-300px;
+        top:100px;
+        z-index:1000;
+        background:#fff;
+        height:100vh;
+        transition:left ease 0.6s;
+        &.active {
+            left:0;
+        }
+        .toggleMenu {
+            float:right;
+            width:25px;
+            height:25px;
+            position:relative;
+            cursor:pointer;
+            margin:10px;
+            div {
+                position:absolute;
+                left:0;
+                right:0;
+                top:0;
+                bottom:0;
+                margin:auto;
+                width:25px;
+                height:2px;
+                background: $grey;
+                &:first-of-type {
+                    transform: rotate(45deg);
+                }
+                &:last-of-type {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        ul.menu {
+            display:block;
+            li {
+                display:block;
+                margin:0;
+                a {
+                    color:$grey;
+                    font-size:14px;
+                    text-transform: uppercase;
+                    &:hover {
+                        color:$gold;
+                    }
+                }
+                &.active {
+                    a {
+                        color:$gold;
+                    }
+                }
+            }
+        }
+    }
+    .search {
+        display:none;
+        position:absolute;
+        transition:top ease .4s;
+        top:100px;
+        width:100%;
+        z-index: 900;
+        background:#fff;
+        .row {
+            margin:auto;
+            .input-group {
+                margin:0;
+                display:block;
+                text-align: center;
+                font-size:0;
+                > * {
+                    display:inline-block;
+                    max-width:300px;
+                }
+                .button {
+                    background:$gold;
+                }
+            }
+        }
     }
 }

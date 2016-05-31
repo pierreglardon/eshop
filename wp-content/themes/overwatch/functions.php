@@ -49,3 +49,5 @@ require_once( 'library/responsive-images.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
+define('_PAGE_COMPTE', 7);
+define('_PAGE_CART', 5);
