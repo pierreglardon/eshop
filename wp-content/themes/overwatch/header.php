@@ -52,9 +52,9 @@
 	</header>
 
 
-	<header class="header" id="header">
-		<section>
-			<div class="menu">
+	<header id="header">
+		<section class="row">
+			<div class="columns menu header-align">
 				<div class="toggleMenu">
 					<div></div>
 					<div></div>
@@ -62,10 +62,12 @@
 					<div></div>
 				</div>
 			</div>
-			<div class="logo">
+			<div class="columns logo">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('template_directory') ?>/assets/images/focus.svg" alt="<?php bloginfo( 'name' ); ?>"/></a>
 			</div>
-
+		<div class="columns smartMenu header-align">
+			test
+		</div>
 		</section>
 	</header>
 

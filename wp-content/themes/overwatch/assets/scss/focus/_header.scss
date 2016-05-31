@@ -1,0 +1,42 @@
+#header {
+    background:#fff;
+    position:relative;
+    .header-align {
+        height:100px;
+        box-sizing: border-box;
+        line-height:100px;
+    }
+    .menu {
+        float:left;
+        width:auto;
+        .toggleMenu {
+            width:25px;
+            cursor: pointer;
+            display:inline-block;
+            div {
+                height:2px;
+                margin-bottom:4px;
+                background:$grey;
+                &:last-of-type {
+                    width:12.5px;
+                    margin:0;
+                }
+            }
+        }
+    }
+    .logo {
+        width:auto;
+        position:absolute;
+        height:50px;
+        max-width:205px;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+    }
+    .smartMenu {
+        float:right;
+        width:auto;
+    }
+}
