@@ -6,9 +6,10 @@ var toggleMenu = $('.toggleMenu'),
 
 toggleMenu.click(function() {
     $('#navigation').toggleClass('active');
-    $('body').toggleClass('openMenu blackBG');
+    $('body').toggleClass('openMenu');
     if ($('body').hasClass('openSearch')) {
-        // ne change pas le fond noir s'il est déjà là
+        $('.search').slideToggle();
+        $('body').toggleClass('openSearch');
     } else {
         $('.blackbg').fadeToggle();
     }
@@ -16,10 +17,10 @@ toggleMenu.click(function() {
 showSearch.click(function() {
     event.preventDefault();
     $('.search').slideToggle();
-    $('body').toggleClass('openSearch blackBG');
-    // $('.blackbg').fadeToggle();
+    $('body').toggleClass('openSearch');
     if ($('body').hasClass('openMenu')) {
-        // ne change pas le fond noir s'il est déjà là
+        $('#navigation').removeClass('active');
+        $('body').toggleClass('openMenu');
     } else {
         $('.blackbg').fadeToggle();
     }

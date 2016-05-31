@@ -11,12 +11,23 @@
 ?>
 
 		</section>
+
 		<footer id="footer">
 			<div class="row">
-				<div class="columns small-12">
+				<div class="columns small-12 logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<img src="<?php bloginfo('template_directory') ?>/assets/images/focus.svg" alt="<?php bloginfo( 'name' ); ?>"/>
 					</a>
+				</div>
+			</div>
+			<div class="row menu-footer">
+				<?= wp_nav_menu("footer"); ?>
+				<div class="small-12 medium-3 columns">
+					<ul>
+						<li>
+							<span>Newsletter</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</footer>
