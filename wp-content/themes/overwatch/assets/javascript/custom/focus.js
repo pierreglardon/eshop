@@ -1,20 +1,25 @@
 // menu
 
 var toggleMenu = $('.toggleMenu'),
-    blackBG = $('.blackBG'),
     showSearch = $('.showSearch');
 
 toggleMenu.click(function() {
     $('#navigation').toggleClass('active');
-    $('body').toggleClass('openMenu');
-    $('.blackbg').fadeToggle();
-});
-blackBG.click(function() {
-    $('#navigation').toggleClass('active');
-    $('body').toggleClass('openMenu');
-    $('.blackbg').fadeToggle();
+    $('body').toggleClass('openMenu noOverflowX blackBG');
+    if ($('body').hasClass('blackBG')) {
+        //do nothing if search open
+    } else {
+        $('.blackbg').fadeToggle();
+    }
 });
 showSearch.click(function() {
     event.preventDefault();
-    $('.search').fadeToggle();
+    $('.search').slideToggle();
+    $('body').toggleClass('openSearch noOverflowX blackBG');
+    // $('.blackbg').fadeToggle();
+    if ($('body').hasClass('blackBG')) {
+        //do nothing if search open
+    } else {
+        $('.blackbg').fadeToggle(); 
+    }
 });
