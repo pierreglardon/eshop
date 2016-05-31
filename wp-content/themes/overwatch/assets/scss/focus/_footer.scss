@@ -1,4 +1,7 @@
 footer#footer {
+    padding-top:41px;
+    margin-top:80px;
+    border-top:2px solid $gold;
     .logo {
         img {
             max-width:210px;
@@ -7,7 +10,9 @@ footer#footer {
     }
     .menu-footer {
         > div {
-            padding:0 !important;
+            &:first-of-type {
+                padding:0 !important;
+            }
             &.menu-footer-container {
                 @include grid-column(9);
                 @include breakpoint(small down) {
@@ -27,6 +32,7 @@ footer#footer {
                 > li {
                     display:inline-block;
                     vertical-align: top;
+                    margin-bottom:35px;
                     > a, span {
                         padding:0;
                         font-size:20px;
@@ -37,6 +43,9 @@ footer#footer {
                     > ul.sub-menu {
                         margin:32px 0 0 0;
                         list-style:none;
+                        @include breakpoint(small down) {
+                            margin-top:10px;
+                        }
                         > li {
                             > a {
                                 font-size:16px;
@@ -55,6 +64,61 @@ footer#footer {
                 ul {
                     margin:0;
                 }
+            }
+        }
+        .newsletter {
+            @include breakpoint(small down) {
+                @include grid-column(12);
+                padding:0 !important;
+            }
+            span {
+                margin-bottom:32px;
+                line-height:1;
+                @include breakpoint(small down) {
+                    margin-bottom:20px;
+                }
+            }
+            input {
+                display:inline-block;
+                font-size:16px;
+                &.text {
+                    height:36px;
+                    border:2px solid $gold;
+                    box-sizing: border-box;
+                    float:left;
+                    max-width:calc(100% - 36px);
+                    margin-bottom:0;
+                }
+                &.submit {
+                    height:36px;
+                    width:36px;
+                    text-align: center;
+                    background:$gold;
+                    border:0;
+                    color:#fff;
+                    width:36px;
+                    text-transform: uppercase;
+                    overflow:hidden;
+                }
+            }
+        }
+        .secure {
+            @include breakpoint(small down) {
+                @include grid-column(12);
+                padding:0 !important;
+            }
+            span {
+                margin-bottom:32px;
+                margin-top:30px;
+                line-height:1;
+                @include breakpoint(small down) {
+                    margin-top:0;
+                    margin-bottom:20px;
+                }
+            }
+            img {
+                max-width:35px;
+                margin:0 10px 10px 0;
             }
         }
     }

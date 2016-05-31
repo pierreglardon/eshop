@@ -24,8 +24,24 @@
 				<?= wp_nav_menu("footer"); ?>
 				<div class="small-12 medium-3 columns">
 					<ul>
-						<li>
+						<li class="newsletter">
 							<span>Newsletter</span>
+							<div>
+								<input type="text" name="newsletter" placeholder="Entrez votre email" class="text" />
+								<input type="button" name="submit" value="Ok" class="submit" />
+							</div>
+
+						</li>
+						<li class="secure">
+							<span>Paiement sécurisé</span>
+							<div>
+								<img src="<?php bloginfo('template_directory') ?>/assets/images/security_cards/visa.png" alt="">
+				                <img src="<?php bloginfo('template_directory') ?>/assets/images/security_cards/visaelectron.png" alt="">
+				                <img src="<?php bloginfo('template_directory') ?>/assets/images/security_cards/mastercard.png" alt="">
+				                <img src="<?php bloginfo('template_directory') ?>/assets/images/security_cards/maestro.png" alt="">
+				                <img src="<?php bloginfo('template_directory') ?>/assets/images/security_cards/paypal.png" alt="">
+				                <img src="<?php bloginfo('template_directory') ?>/assets/images/security_cards/eblue.png" alt="">
+							</div>
 						</li>
 					</ul>
 				</div>
