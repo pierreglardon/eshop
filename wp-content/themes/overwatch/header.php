@@ -27,7 +27,7 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header" role="banner" style="display:none;">
 		<div class="title-bar" data-responsive-toggle="site-navigation">
 			<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
 			<div class="title-bar-title">
@@ -49,6 +49,24 @@
 				<?php endif; ?>
 			</div>
 		</nav>
+	</header>
+
+
+	<header class="header" id="header">
+		<section>
+			<div class="menu">
+				<div class="toggleMenu">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="logo">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory(); ?>/assets/focus/logo.svg" alt="<?php bloginfo( 'name' ); ?>"/></a>
+			</div>
+
+		</section>
 	</header>
 
 	<section class="container">
