@@ -54,7 +54,7 @@
 
 	<header id="header">
 		<section class="row">
-			<div class="columns menu header-align">
+			<div class="columns menuTop header-align">
 				<div class="toggleMenu">
 					<div></div>
 					<div></div>
@@ -69,6 +69,9 @@
 			test
 		</div>
 		</section>
+		<nav>
+			<?= wp_nav_menu("topbar"); ?>
+		</nav>
 	</header>
 
 	<section class="container">
