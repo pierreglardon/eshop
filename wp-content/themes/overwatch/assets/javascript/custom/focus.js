@@ -5,8 +5,8 @@ var toggleMenu = $('.toggleMenu'),
 
 toggleMenu.click(function() {
     $('#navigation').toggleClass('active');
-    $('body').toggleClass('openMenu noOverflowX blackBG');
-    if ($('body').hasClass('blackBG')) {
+    $('body').toggleClass('openMenu blackBG');
+    if ($('body').hasClass('openSearch')) {
         //do nothing if search open
     } else {
         $('.blackbg').fadeToggle();
@@ -15,11 +15,11 @@ toggleMenu.click(function() {
 showSearch.click(function() {
     event.preventDefault();
     $('.search').slideToggle();
-    $('body').toggleClass('openSearch noOverflowX blackBG');
+    $('body').toggleClass('openSearch blackBG');
     // $('.blackbg').fadeToggle();
-    if ($('body').hasClass('blackBG')) {
-        //do nothing if search open
+    if ($('body').hasClass('openMenu')) {
+        //do nothing if menu open
     } else {
-        $('.blackbg').fadeToggle(); 
+        $('.blackbg').fadeToggle();
     }
 });

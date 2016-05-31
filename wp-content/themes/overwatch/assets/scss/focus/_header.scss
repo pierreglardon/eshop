@@ -1,8 +1,8 @@
 body {
     .blackbg {
         position:absolute;
-        height:100vh;
-        width:100vw;
+        height:100%;
+        width:100%;
         display:none;
         background:rgba(0,0,0,0.8);
         z-index:970;
@@ -35,9 +35,6 @@ body {
             }
         }
     }
-    &.noOverflowX {
-        overflow-x: hidden;
-    }
 }
 body.admin-bar {
     #header {
@@ -68,6 +65,8 @@ body.admin-bar {
             width:25px;
             cursor: pointer;
             display:inline-block;
+            box-sizing: padding-box;
+            padding:15px;
             div {
                 transition: ease 0.3s;
                 top:0;
@@ -175,6 +174,7 @@ body.admin-bar {
         .row {
             margin:auto;
             .input-group {
+                padding:10px 0 20px;
                 margin:0;
                 display:block;
                 text-align: center;
