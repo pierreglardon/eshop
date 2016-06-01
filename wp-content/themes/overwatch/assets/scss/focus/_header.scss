@@ -186,6 +186,7 @@ body.admin-bar {
         .row {
             margin:auto;
             @include grid-column(12);
+            float:none;
             .input-group {
                 padding:10px 0 20px;
                 margin:0;
