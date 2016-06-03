@@ -68,5 +68,8 @@
 
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
+<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/components/owl.carousel/dist/owl.carousel.min.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/javascript/custom/carousel.js" type="text/javascript"></script>
+
 </body>
 </html>

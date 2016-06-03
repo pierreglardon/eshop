@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
-
+.row.fullWidth {
+    width:100%;
+    max-width:100%;
+}
 body {
     .container {
         padding-top:100px;
@@ -111,12 +114,144 @@ body {
             }
         }
         .newproducts {
-            padding-top:80px;
+            padding:100px 0;
+            text-align:center;
+            img {
+                max-width: 75%;
+                margin-bottom:15px;
+            }
             h3 {
                 font-family: "Dancing Script", cursive;
                 font-size:36px;
                 text-align: center;
                 margin-bottom:60px;
+            }
+            h4 {
+                font-size:16px;
+                text-align: left;
+                color:$grey;
+                text-transform: uppercase;
+                font-weight: bold;
+                line-height:1;
+                margin:0;
+                margin:10px 0;
+            }
+        }
+        .lastposts {
+            .columns {
+                padding:0;
+                position:relative;
+                a {
+                    section {
+                        height:420px;
+                        overflow:hidden;
+                        position:relative;
+                        z-index: 1;
+                        aside {
+                            position:relative;
+                            top:50%;
+                            transform: translateY(-50%);
+                            z-index: 3;
+                            margin:0;
+                            opacity: 0;
+                            text-align:center;
+                            transition: opacity ease .5s;
+                            h3 {
+                                font-family: "Dancing Script", cursive;
+                                color:#fff;
+                            }
+                            hr {
+                                margin:14px 25%;
+                                height:2px;
+                                border:0;
+                                background:#fff;
+                            }
+                            div {
+                                color:#fff;
+                                font-size:14px;
+                            }
+                        }
+                        img {
+                            width:100%;
+                            position:absolute;
+                            top:0;
+                            z-index: 1;
+                        }
+                        &::after {
+                            content:"";
+                            display:block;
+                            height:100%;
+                            width:100%;
+                            background:rgba(0,0,0,0.6);
+                            top:0;
+                            position: absolute;
+                            z-index: 2;
+                            opacity: 0;
+                            transition: opacity ease .5s;
+                        }
+                    }
+                    &:hover {
+                        section {
+                            aside {
+                                opacity: 1;
+                                h3 {
+                                }
+                            }
+                            &::after {
+                                opacity:1;
+                            }
+                        }
+                    }
+                }
+            }
+            .seeblog {
+                a {
+                    margin-top:38px;
+                    display:inline-block;
+                    padding:5px 25px;
+                    color:$gold;
+                    font-family: "Dancing Script", cursive;
+                    border:1px solid $gold;
+                    font-size:24px;
+                    transition:ease .5s;
+                    &:hover {
+                        color:#fff;
+                        background:$gold;
+                    }
+                }
+            }
+        }
+        .bestsellers {
+            @extend .newproducts;
+            padding:150px 0;
+        }
+        .marques {
+            @extend .punchline;
+            line-height:1;
+            h3 {
+                font-family: "Dancing Script", cursive;
+                color:$grey;
+                font-size:36px;
+                padding:34px 0;
+            }
+            .owl-carousel {
+                position:static;
+                .owl-dots {
+                    position:absolute;
+                    bottom:15px;
+                    margin:auto;
+                    left:0;
+                    right:0;
+                    transition:color ease .4s;
+                    color:#4b4b4b;
+                    > div {
+                        font-size:10px;
+                        margin:0 7px;
+                        &.active {
+                            color:$gold;
+                        }
+                    }
+                }
             }
         }
     }
