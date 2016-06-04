@@ -301,8 +301,30 @@ body {
                 aside {
                     border:5px solid #fff;
                     padding-top:20px;
+                    header {
+                        font-family: "Dancing Script", cursive;
+                        font-size:24px;
+                    }
+                    article {
+                        margin:10px 0;
+                        padding-bottom:10px;
+                        border-bottom:1px solid rgba(0,0,0,0.1);
+                        h5 {
+                            font-size:15px;
+                            color:$grey;
+                            margin:0;
+                            font-weight:bold;
+                        }
+                        h6 {
+                            margin:0;
+                            font-size:10px;
+                            text-transform: uppercase;
+                            color:$grey;
+                        }
+
+                    }
                 }
-                article {
+                .article {
                     background:#fff;
                     padding-top:20px;
                     padding-bottom:20px;

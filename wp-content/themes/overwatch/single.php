@@ -60,13 +60,27 @@ get_header(); ?>
 	</nav>
 	<section class="row article" data-equalizer>
 		<aside class="columns medium-4 large-3 hide-for-small-only" data-equalizer-watch>
-			<?= wp_nav_menu("single"); ?>
+		<header>
+			Articles récents :
+		</header>
+			<?php
+				$catquery = new WP_Query( 'cat=10&posts_per_page=10' );
+				while($catquery->have_posts()) : $catquery->the_post();
+			?>
+			<article>
+				<a href="<?php the_permalink(); ?>">
+					<h5><i class="fa fa-caret-right" aria-hidden="true"></i> <?php the_title(); ?></h5>
+					<h6>publié le <?php the_date(); ?></h6>
+				</a>
+			</article>
+			<?php endwhile; ?>
 		</aside>
 		<?php do_action( 'foundationpress_before_content' ); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
-			<article class="columns small-12 medium-8 large-9" id="post-<?php the_ID(); ?>" data-equalizer-watch>
+			<article class="article columns small-12 medium-8 large-9" id="post-<?php the_ID(); ?>" data-equalizer-watch>
 				<header>
-					<h1 class="entry-title"><?php the_title(); ?></h1>
+					<h3 class="entry-title"><?php the_title(); ?></h3>
+
 				</header>
 				<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 				<div class="content">

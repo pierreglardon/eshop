@@ -162,13 +162,14 @@ body.admin-bar {
                     color:$grey;
                     font-size:14px;
                     text-transform: uppercase;
-                    padding-left:5% 7%;
+                    padding-left:5%;
+                    background:none;
                     &:hover {
                         color:$gold;
                     }
                 }
                 &.active {
-                    a {
+                    > a {
                         color:$gold;
                     }
                 }
