@@ -4,7 +4,7 @@
     max-width:100%;
 }
 body {
-    background:#f7f7f7;
+    background:#f9f9f9;
     color:$grey;
     .container {
         padding-top:100px;
@@ -118,6 +118,17 @@ body {
         .newproducts {
             padding:100px 0;
             text-align:center;
+            @include breakpoint(medium down) {
+                padding:50px 0;
+            }
+            .product {
+                @include breakpoint(medium down) {
+                    margin-bottom:20px;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
             img {
                 max-width: 75%;
                 margin-bottom:15px;
@@ -149,6 +160,9 @@ body {
                         overflow:hidden;
                         position:relative;
                         z-index: 1;
+                        @include breakpoint(medium down) {
+                            height:200px;
+                        }
                         aside {
                             position:relative;
                             top:50%;
@@ -158,6 +172,9 @@ body {
                             opacity: 0;
                             text-align:center;
                             transition: opacity ease .5s;
+                            @include breakpoint(medium down) {
+                                opacity:1;
+                            }
                             h3 {
                                 font-family: "Dancing Script", cursive;
                                 color:#fff;
@@ -179,6 +196,10 @@ body {
                             z-index: 1;
                             max-height: 420px;
                             max-width: inherit;
+                            @include breakpoint(medium down) {
+                                min-height: 200px;
+                                max-width: 100%;
+                            }
                         }
                         &::after {
                             content:"";
@@ -191,14 +212,15 @@ body {
                             z-index: 2;
                             opacity: 0;
                             transition: opacity ease .5s;
+                            @include breakpoint(medium down) {
+                                opacity:1;
+                            }
                         }
                     }
                     &:hover {
                         section {
                             aside {
                                 opacity: 1;
-                                h3 {
-                                }
                             }
                             &::after {
                                 opacity:1;
@@ -227,6 +249,9 @@ body {
         .bestsellers {
             @extend .newproducts;
             padding:150px 0;
+            @include breakpoint(medium down) {
+                padding:50px 0;
+            }
         }
         .marques {
             @extend .punchline;

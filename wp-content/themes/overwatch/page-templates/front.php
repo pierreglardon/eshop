@@ -38,7 +38,7 @@ get_header(); ?>
 			$args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => 8, 'orderby' =>'date','order' => 'DESC' );
 		    $loop = new WP_Query( $args );
 			while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-				<div class="small-12 medium-6 large-3 columns">
+				<div class="small-12 medium-6 large-3 columns product">
 					<a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 						<?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="65px" height="115px" />'; ?>
 						<h4><?php the_title(); ?></h4>
@@ -88,7 +88,7 @@ get_header(); ?>
 			$args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => 4, 'meta_key' => 'total_sales' );
 		    $loop = new WP_Query( $args );
 			while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-				<div class="small-12 medium-6 large-3 columns">
+				<div class="small-12 medium-6 large-3 columns product">
 					<a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 						<?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="65px" height="115px" />'; ?>
 						<h4><?php the_title(); ?></h4>
@@ -111,10 +111,5 @@ get_header(); ?>
 		<div>6</div>
 	</div>
 </section>
-<script type="text/javascript">
-
-</script>
-
-
 
 <?php get_footer();
