@@ -59,8 +59,8 @@ get_header(); ?>
 		</div>
 	</nav>
 	<section class="row article" data-equalizer>
-		<aside class="columns medium-4 large-3" data-equalizer-watch>
-			test
+		<aside class="columns medium-4 large-3 hide-for-small-only" data-equalizer-watch>
+			<?= wp_nav_menu("single"); ?>
 		</aside>
 		<?php do_action( 'foundationpress_before_content' ); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
