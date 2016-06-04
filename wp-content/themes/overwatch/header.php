@@ -58,11 +58,11 @@
 				<div></div>
 				<div></div>
 			</div>
-			<?= wp_nav_menu('top-bar-r'); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'top-bar-r' ) ); ?>
 		</nav>
 		<section class="search">
 			<div class="row">
-				<?= get_search_form ( $echo = true ) ?>
+				<?php get_search_form ( $echo = true ) ?>
 			</div>
 		</section>
 	</header>

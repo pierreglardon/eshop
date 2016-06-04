@@ -194,11 +194,13 @@ body {
                             position: absolute;
                             top: 0;
                             z-index: 1;
-                            max-height: 420px;
-                            max-width: inherit;
+                            max-width: 150%;
+                            min-height:420px;
+                            transform: translateX(-25%);
                             @include breakpoint(medium down) {
                                 min-height: 200px;
                                 max-width: 100%;
+                                transform: none;
                             }
                         }
                         &::after {
