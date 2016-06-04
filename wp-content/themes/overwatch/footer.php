@@ -21,7 +21,8 @@
 				</div>
 			</div>
 			<div class="row menu-footer">
-				<?= wp_nav_menu("footer"); ?>
+
+				<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
 				<div class="small-12 medium-3 columns">
 					<ul>
 						<li class="newsletter">
