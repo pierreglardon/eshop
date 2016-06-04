@@ -49,3 +49,4 @@ function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
 	return $html;
 }
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+add_filter( 'max_srcset_image_width', create_function( '', 'return 1;' ) );
