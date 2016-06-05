@@ -20,17 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="cycle-slideshow"
-    data-cycle-fx="scrollHorz"
-    data-cycle-timeout="0"
-    data-cycle-prev="#prev"
-    data-cycle-next="#next"
-    >
-    <img src="http://malsup.github.io/images/p1.jpg">
-    <img src="http://malsup.github.io/images/p2.jpg">
-    <img src="http://malsup.github.io/images/p3.jpg">
-    <img src="http://malsup.github.io/images/p4.jpg">
-</div>
 
 <div class="center">
     <a href=# id="prev">Prev</a>

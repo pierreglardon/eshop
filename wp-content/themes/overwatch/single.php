@@ -17,7 +17,7 @@ get_header(); ?>
 			if (is_page() && !is_front_page() || is_single() || is_category()) {
 				?>
 				<a title="<?php bloginfo('name') ?>" href="<?php bloginfo('url') ?>">
-					<?php bloginfo('name') ?>
+					Accueil
 				</a> /
 				<?php
 				if (is_page())

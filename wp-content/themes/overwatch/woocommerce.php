@@ -7,11 +7,19 @@
  */
 
 get_header(); ?>
-
-<div class="row">
+<nav class="row filariane">
+	<div class="small-12 columns">
+		<?php
+	$args = array(
+			'delimiter' => ' <span>/</span> '
+	);
+	 woocommerce_breadcrumb( $args ); ?>
+	</div>
+</nav>
+<div class="row" data-equalizer>
 	<?php get_sidebar(); ?>
-	<div class="small-12 large-8 columns" role="main">
-		
+	<div class="content small-12 large-8 columns" role="main" data-equalizer-watch>
+
 	<?php do_action( 'foundationpress_before_content' ); ?>
 
 	<?php while ( woocommerce_content() ) : the_post(); ?>
