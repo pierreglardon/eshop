@@ -23,7 +23,12 @@ get_header(); ?>
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+			<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+			<section>
+				<?php the_post_thumbnail(full); ?>
+			</section>
+			<p><?php the_excerpt() ?></p>
+			<aside class="text-right"><a href="<?php the_permalink() ?>">Lire la suite</a></aside>
 		<?php endwhile; ?>
 
 		<?php else : ?>
