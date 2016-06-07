@@ -48,11 +48,17 @@
 				<?php else: ?>
 					<a href="<?= wp_registration_url(); ?>"><i class="fa fa-user" aria-hidden="true"></i></a>
 				<?php endif; ?>
-				<a href="<?= get_permalink(_PAGE_CART); ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+				<a href="<?= get_permalink(_PAGE_CART); ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					<?php global $woocommerce; if ( $woocommerce->cart->cart_contents_count > 0)
+					echo '<div>'.sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count).'</div>'; ?>
+				</a>
 			</aside>
 
 		</div>
 		</section>
+
+
+
 		<nav id="navigation">
 			<div class="toggleMenu hide">
 				<div></div>
