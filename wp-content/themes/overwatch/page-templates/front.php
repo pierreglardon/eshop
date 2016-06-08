@@ -32,13 +32,13 @@ get_header(); ?>
 			<h3>Découvrez nos nouveaux produits</h3>
 		</div>
 	</div>
-	<div class="row">
-		<div class="columns small-12">
+	<div class="row" >
+		<div class="columns small-12" data-equalizer>
 			<?php
 			$args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => 8, 'orderby' =>'date','order' => 'DESC' );
 		    $loop = new WP_Query( $args );
 			while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-				<div class="small-12 medium-6 large-3 columns product">
+				<div class="small-12 medium-6 large-3 columns product" data-equalizer-watch>
 					<a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 						<?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="65px" height="115px" />'; ?>
 						<h4><?php the_title(); ?></h4>
@@ -72,7 +72,7 @@ get_header(); ?>
 		</div>
 		<?php endwhile; ?>
 		<div class="seeblog text-center small-12 columns">
-			<a href="#">Visiter le blog</a>
+			<a href="<?php echo get_category_link(10); ?> ">Visiter le blog</a>
 		</div>
 	</div>
 </section>
@@ -83,12 +83,12 @@ get_header(); ?>
 		</div>
 	</div>
 	<div class="row">
-		<div class="columns small-12">
+		<div class="columns small-12" data-equalizer>
 			<?php
 			$args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => 4, 'meta_key' => 'total_sales' );
 		    $loop = new WP_Query( $args );
 			while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-				<div class="small-12 medium-6 large-3 columns product">
+				<div class="small-12 medium-6 large-3 columns product" data-equalizer-watch>
 					<a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 						<?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="65px" height="115px" />'; ?>
 						<h4><?php the_title(); ?></h4>
