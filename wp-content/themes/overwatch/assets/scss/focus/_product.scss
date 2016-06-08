@@ -207,6 +207,262 @@ body {
             }
             .content {
                 @include grid-column(12);
+                background: #fff;
+                line-height:30px;
+                color:#444;
+                font-size:14px;
+                text-transform: uppercase;
+                .woocommerce-message {
+                    border-top-color:$gold;
+                    padding-left:5.5em !important;
+                    &::before {
+                        color:$gold;
+                        font-size:22px;
+                        top:inherit;
+                    }
+                    .button {
+                        background: $gold;
+                        border-radius: 0;
+                        color: #fff;
+                        font-weight: 400;
+                        height: 30px;
+                        padding: 0 20px;
+                        line-height: 30px;
+                        text-transform: uppercase;
+                        font-size: 14px;
+                    }
+                }
+                .intro-product {
+                    padding:55px 0 40px;
+                    @include grid-column(10);
+                    @include grid-column-position(center);
+                    display:flex;
+                    align-items:center;
+                    border-bottom:1px solid $gold;
+                    @include breakpoint(medium down) {
+                        display: block;
+                        @include grid-column(12);
+                        float:none;
+                        padding:30px 0;
+                    }
+                    > .images {
+                        float: none;
+                        @include breakpoint(medium down) {
+                            @include grid-column(12);
+                            float: none;
+                        }
+                        img {
+                            max-width:80%;
+                            width:auto;
+                            max-height:350px;
+                            margin:auto;
+                            @include breakpoint(medium down) {
+                                display: block;
+                            }
+                        }
+                    }
+                    > .summary {
+                        float: none;
+                        @include breakpoint(medium down) {
+                            @include grid-column(12);
+                            float: none !important;
+                            margin-bottom:0;
+                        }
+                        form {
+                            margin-bottom:0;
+                        }
+                        h1.product_title {
+                            font-size:24px;
+                            color:#444;
+                            text-transform:uppercase;
+                            margin-bottom:25px;
+                        }
+                        .price {
+                            font-size:24px;
+                            line-height:1;
+                            color:#444;
+                            margin-bottom:30px;
+                        }
+                        .quantity {
+                            float:none;
+                            width:auto;
+                            margin-bottom:30px;
+                            span {
+                                float:left;
+                                font-size:16px;
+                                color:#444;
+                                line-height:25px;
+                                margin-right:10px;
+                            }
+                            input {
+                                overflow: hidden;
+                                max-width: 50px;
+                                text-align: center;
+                                padding: 0;
+                                margin: 0;
+                                padding-left: 12px;
+                                height: 25px;
+                                border:1px solid #ababab;
+                                box-shadow: 0;
+                                background:#fff;
+                            }
+                        }
+                        .single_add_to_cart_button {
+                            display: block;
+                            width:inherit;
+                            width:350px;
+                            max-width: 100%;
+                            padding:15px 15px;
+                            text-align: center;
+                            float:none;
+                            margin:25px 0 0;
+                            font-size:20px;
+                            text-transform: uppercase;
+                            font-weight:400;
+                            background:transparent;
+                            border-radius:0;
+                            color:$gold;
+                            border:2px solid $gold;
+                            transition:all ease .4s;
+                            &:hover {
+                                color:#fff;
+                                background:$gold;
+                            }
+                        }
+                    }
+                }
+                .woocommerce-tabs {
+                    padding:40px 0 0;
+                    @include grid-column(10);
+                    @include grid-column-position(center);
+                    @include breakpoint(medium down) {
+                        @include grid-column(12);
+                        padding:30px 0;
+                        float:none;
+                    }
+                    .tabs {
+                        display:none;
+                    }
+                    .panel {
+                        display:block!important;
+                        padding-bottom:55px;
+                        margin-bottom:0;
+                        &:hover {
+                            h2 {
+                                &::after {
+                                    width:100%;
+                                }
+                            }
+                        }
+                        h2 {
+                            font-size:24px;
+                            color:#444;
+                            text-transform: uppercase;
+                            margin-bottom:38px;
+                            &::after {
+                                display:block;
+                                content:"";
+                                width:190px;
+                                height:2px;
+                                background: $gold;
+                                transition:ease .7s width;
+                            }
+                        }
+                        &#tab-description {
+                            p {
+                                @include grid-column(10);
+                                @include grid-column-position(center);
+                                display:block;
+                                float:none !important;
+                                font-size:14px;
+                                line-height:24px;
+                                &:last-of-type {
+                                    margin-bottom:0;
+                                }
+                            }
+                        }
+                        &#tab-additional_information {
+                            .table-container {
+                                border:1px solid $gold;
+                                background:transparent;
+                                padding:30px 0;
+                                @include breakpoint(medium down) {
+                                    @include grid-row;
+                                }
+                                .shop_attributes {
+                                    background:transparent;
+                                    margin:0;
+                                    border:0;
+                                    @include grid-column(10);
+                                    @include grid-column-position(center);
+                                    @include breakpoint(medium down) {
+                                        @include grid-column(12);
+                                    }
+                                    tbody {
+                                        border:0;
+                                        tr, td, th {
+                                            border:0;
+                                            background:transparent;
+                                            font-size:14px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .related.products {
+                    @include grid-column(10);
+                    @include grid-column-position(center);
+                    @include breakpoint(medium down) {
+                        @include grid-column(12);
+                        padding:30px 0;
+                        float:none;
+                    }
+                    &:hover {
+                        h2 {
+                            &::after {
+                                width:100%;
+                            }
+                        }
+                    }
+                    h2 {
+                        font-size:24px;
+                        color:#444;
+                        text-transform: uppercase;
+                        margin-bottom:38px;
+                        &::after {
+                            display:block;
+                            content:"";
+                            width:190px;
+                            height:2px;
+                            background: $gold;
+                            transition:ease .7s width;
+                        }
+                    }
+                    li.product {
+                        margin-bottom:20px;
+                        a {
+                            img {
+                                max-width:70%;
+                                margin:0 auto 15px;
+                            }
+                            h3, .price {
+                                padding:0;
+                                font-size: 16px;
+                                text-align: left;
+                                color: #4b4b4b;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                                line-height: 1;
+                                margin: 10px 0;
+                            }
+                        }
+                        .add_to_cart_button {
+                            display:none;
+                        }
+                    }
+                }
             }
         }
     }

@@ -84,7 +84,7 @@ body.admin-bar {
     .logo {
         width:auto;
         position:absolute;
-        height:50px;
+        height:30px;
         max-width:205px;
         left:0;
         right:0;
@@ -107,11 +107,26 @@ body.admin-bar {
                 font-size:18px;
                 color:$grey;
                 transition:opacity .4s ease;
+                position:relative;
                 &:hover {
                     opacity:0.8;
                 }
                 &:first-of-type {
                     margin-left:0;
+                }
+                > div {
+                    line-height: 16px;
+                    background: #000;
+                    color: #fff;
+                    display: inline-block;
+                    border-radius: 10px;
+                    width: 16px;
+                    height: 16px;
+                    font-size: 12px;
+                    text-align: center;
+                    position: absolute;
+                    top:0;
+                    right:-10px;
                 }
             }
         }

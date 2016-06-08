@@ -51,4 +51,4 @@ require_once( 'library/responsive-images.php' );
 // require_once( 'library/protocol-relative-theme-assets.php' );
 define('_PAGE_COMPTE', 7);
 define('_PAGE_CART', 5);
-add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 2;' ), 20 );
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );
